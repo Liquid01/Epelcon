@@ -1,0 +1,304 @@
+/*!****SILVER STARTED*!*/
+
+/*.price-table.price-table-silver {*/
+/*    border-bottom: solid 3px #c0c0c0*/
+/*}*/
+
+/*.price-table.price-table-silver header {*/
+/*    background-color: #c0c0c0*/
+/*}*/
+
+/*.price-table.price-table-silver .price-table-body:after {*/
+/*    background-color: #c0c0c0*/
+/*}*/
+
+/*.price-table.price-table-silver .price-table-list i {*/
+/*    color: #555*/
+/*}*/
+
+/*.price-table.price-table-silver:hover .price-table-body {*/
+/*    color: #000*/
+/*}*/
+
+/*.price-table.price-table-silver:hover .price-table-body .price-table-list li {*/
+/*    border-color: #666*/
+/*}*/
+
+/*.price-table.price-table-silver:hover .price-table-body .price-table-list li i {*/
+/*    color: #000*/
+/*}*/
+
+/*.price-table.price-table-silver:hover .price-table-body .btn-raised {*/
+/*    background-color: #fff;*/
+/*    color: #666*/
+/*}*/
+
+
+/*!*GOLD STARTED HERE*!*/
+
+/*.price-table.price-table-gold {*/
+/*    border-bottom: solid 3px #BC9B1B*/
+/*}*/
+
+/*.price-table.price-table-gold header {*/
+/*    background-color: #BC9B1B*/
+/*}*/
+
+/*.price-table.price-table-gold .price-table-body:after {*/
+/*    background-color: #BC9B1B*/
+/*}*/
+
+/*.price-table.price-table-gold .price-table-list i {*/
+/*    color: #BC9B1B*/
+/*}*/
+
+/*.price-table.price-table-gold:hover .price-table-body {*/
+/*    color: #fff*/
+/*}*/
+
+/*.price-table.price-table-gold:hover .price-table-body .price-table-list li {*/
+/*    border-color: #8acc8d*/
+/*}*/
+
+/*.price-table.price-table-gold:hover .price-table-body .price-table-list li i {*/
+/*    color: #fff*/
+/*}*/
+
+/*.price-table.price-table-gold:hover .price-table-body .btn-raised {*/
+/*    background-color: #fff;*/
+/*    color: #666*/
+/*}*/
+
+
+/*!*RUBY STARTED HERE*!*/
+
+/*.price-table.price-table-ruby {*/
+/*    border-bottom: solid 3px #A10222*/
+/*}*/
+
+/*.price-table.price-table-ruby header {*/
+/*    background-color: #A10222*/
+/*}*/
+
+/*.price-table.price-table-ruby .price-table-body:after {*/
+/*    background-color: #A10222*/
+/*}*/
+
+/*.price-table.price-table-ruby .price-table-list i {*/
+/*    color: #A10222*/
+/*}*/
+
+/*.price-table.price-table-ruby:hover .price-table-body {*/
+/*    color: #fff*/
+/*}*/
+
+/*.price-table.price-table-ruby:hover .price-table-body .price-table-list li {*/
+/*    border-color: #fff*/
+/*}*/
+
+/*.price-table.price-table-ruby:hover .price-table-body .price-table-list li i {*/
+/*    color: #fff*/
+/*}*/
+
+/*.price-table.price-table-ruby:hover .price-table-body .btn-raised {*/
+/*    background-color: #fff;*/
+/*    color: #666*/
+/*}*/
+
+
+/*!*SAPPHIRE STARTED HERE*!*/
+
+/*.price-table.price-table-sapphire {*/
+/*    border-bottom: solid 3px #1D32A1*/
+/*}*/
+
+/*.price-table.price-table-sapphire header {*/
+/*    background-color: #1D32A1*/
+/*}*/
+
+/*.price-table.price-table-sapphire .price-table-body:after {*/
+/*    background-color: #1D32A1*/
+/*}*/
+
+/*.price-table.price-table-sapphire-ruby .price-table-list i {*/
+/*    color: #1D32A1*/
+/*}*/
+
+/*.price-table.price-table-sapphire:hover .price-table-body {*/
+/*    color: #fff*/
+/*}*/
+
+/*.price-table.price-table-sapphire:hover .price-table-body .price-table-list li {*/
+/*    border-color: #fff*/
+/*}*/
+
+/*.price-table.price-table-sapphire:hover .price-table-body .price-table-list li i {*/
+/*    color: #fff*/
+/*}*/
+
+/*.price-table.price-table-sapphire:hover .price-table-body .btn-raised {*/
+/*    background-color: #fff;*/
+/*    color: #666*/
+/*}*/
+
+
+/*!*DIAMOND STARTED HERE*!*/
+
+/*.price-table.price-table-diamond {*/
+/*    border-bottom: solid 3px #9AC5DB*/
+/*}*/
+
+/*.price-table.price-table-diamond header {*/
+/*    background-color: #9AC5DB*/
+/*}*/
+
+/*.price-table.price-table-diamond .price-table-body:after {*/
+/*    background-color: #9AC5DB*/
+/*}*/
+
+/*.price-table.price-table-diamond .price-table-list i {*/
+/*    color: #555*/
+/*}*/
+
+/*.price-table.price-table-diamond:hover .price-table-body {*/
+/*    color: #000*/
+/*}*/
+
+/*.price-table.price-table-diamond:hover .price-table-body .price-table-list li {*/
+/*    border-color: #fff*/
+/*}*/
+
+/*.price-table.price-table-diamond:hover .price-table-body .price-table-list li i {*/
+/*    color: #000*/
+/*}*/
+
+/*.price-table.price-table-diamond:hover .price-table-body .btn-raised {*/
+/*    background-color: #fff;*/
+/*    color: #666*/
+/*}*/
+
+
+/*.side {*/
+/*    margin-right: 15px;*/
+/*}*/
+
+/*.ms-configurator-btn {*/
+/*    right: 5px !important;*/
+/*}*/
+
+/*!*.ms-configurator-btn2*!*/
+/*!*{*!*/
+/*!*top:60%!important;*!*/
+/*!*right:5px!important;*!*/
+/*!*}*!*/
+
+/*.login-btn {*/
+/*    !*display: inline;*!*/
+/*    padding: 30px;*/
+/*    border: 3px solid orange;*/
+/*    !*margin:0px 0px;*!*/
+/*    background: white;*/
+/*}*/
+
+/*.register-btn {*/
+/*    !*display: inline;*!*/
+/*    padding: 20px;*/
+/*    border: 3px solid purple;*/
+/*    !*margin:0px 10px;*!*/
+/*    background: white;*/
+/*}*/
+
+/*.signin {*/
+/*    max-width: 50%;*/
+/*}*/
+
+
+/*.comp-nav > a {*/
+/*    margin-bottom: 5px;*/
+/*}*/
+
+/*.comp-btn {*/
+/*    max-width: 40px;*/
+/*    max-height: 40px;*/
+/*    line-height: 2;*/
+
+
+/*}*/
+
+/*.comp-btn i {*/
+/*    font-size: 20px !important;*/
+/*}*/
+
+/*.invalid-feedback {*/
+/*    display: none;*/
+/*    width: 100%;*/
+/*    margin-top: .25rem;*/
+/*    font-size: 80%;*/
+/*    color: #e3342f;*/
+/*}*/
+
+
+/*input::-webkit-outer-spin-button,*/
+/*input::-webkit-inner-spin-button {*/
+/*    !* display: none; <- Crashes Chrome on hover *!*/
+/*    -webkit-appearance: none !important;*/
+/*    margin: 0 !important; !* <-- Apparently some margin are still there even though it's hidden *!*/
+/*}*/
+
+/*input[type=number] {*/
+/*    -moz-appearance: textfield !important; !* Firefox *!*/
+/*}*/
+
+/*!*form_label_icon*!*/
+
+/*.form_label_icon {*/
+/*    font-size: 100px;*/
+/*}*/
+
+/*.p-item{*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*#package_price{*/
+/*    !*color:darkgreen;*!*/
+/*    font-family: 'Roboto', Arial, sans-serif;*/
+/*    font-size: 15px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+
+/*div.ws-invalid input {*/
+/*    border-color: #c88;*/
+/*}*/
+/*.ws-invalid label {*/
+/*    color: #933;*/
+/*}*/
+/*div.ws-success input {*/
+/*    border-color: #8c8;*/
+/*}*/
+
+/*form {*/
+/*    margin: 10px auto;*/
+/*    width: 600px;*/
+/*    border: 1px solid #000;*/
+/*    padding: 10px;*/
+
+/*}*/
+
+/*.form-row {*/
+/*    padding: 5px 10px;*/
+/*    margin: 5px 0;*/
+/*}*/
+/*label {*/
+/*    display: block;*/
+/*    margin: 3px 0;*/
+/*}*/
+/*.form-row input {*/
+/*    width: 220px;*/
+/*    padding: 3px 1px;*/
+/*    border: 1px solid #ccc;*/
+/*    box-shadow: none;*/
+/*}*/
+/*.form-row input[type="checkbox"] {*/
+/*    width: 15px;*/
+/*}*/

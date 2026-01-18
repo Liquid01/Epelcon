@@ -1,0 +1,421 @@
+/* fallback */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v47/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.user-details
+{
+    magrin-top:10px;
+    text-align: center;
+    color:white;
+}
+
+.circle-downlines
+{
+    /*display: inline-block;*/
+    /*margin-right:0px;*/
+    /*margin-bottom:20px;*/
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    /*border: 1px solid #000;*/
+    /*background: #efefef;*/
+}
+
+.member_downlines
+{
+    display: block;
+    /*margin:0px;*/
+    margin-left:0px;
+}
+
+.member_downlines2
+{
+    display: block;
+    /*margin:0px;*/
+    margin-left:-15px;
+}
+
+.d-container
+{
+    display: inline-block;
+}
+
+
+/*MATRIX STYLES*/
+
+/*Now the CSS*/
+/** {margin: 0; padding: 0;}*/
+
+.tree{
+
+    /*border: 1px solid #000;*/
+    /*margin-left: 10%;*/
+}
+
+.tree ul {
+    padding-top: 20px; position: relative;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+
+}
+
+.tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%; height: 20px;
+}
+.tree li::after{
+    right: auto; left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+    display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+    border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0; height: 20px;
+}
+
+.tree li a img
+{
+    max-width:70px;
+}
+
+.tree li a{
+    /*border: 1px solid #ccc;*/
+    /*padding: 5px 10px;*/
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after,
+.tree li a:hover+ul li::before,
+.tree li a:hover+ul::before,
+.tree li a:hover+ul ul::before{
+    border-color:  #94a0b4;
+}
+
+/*END MATRIX STYLES*/
+
+
+/*SMALL TREE MATRIX STYLES*/
+.small_tree{
+
+    /*border: 1px solid #000;*/
+    /*margin-left: 10%;*/
+}
+
+.small_tree ul {
+    padding-top: 20px; position: relative;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+
+}
+
+.small_tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.small_tree li::before, .small_tree li::after{
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 1px solid #ccc;
+    width: 50%; height: 20px;
+}
+.small_tree li::after{
+    right: auto; left: 50%;
+    border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without
+any siblings*/
+.small_tree li:only-child::after, .small_tree li:only-child::before {
+    display: none;
+}
+
+/*Remove space from the top of single children*/
+.small_tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and
+right connector from last child*/
+.small_tree li:first-child::before, .small_tree li:last-child::after{
+    border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.small_tree li:last-child::before{
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 0 0;
+    -webkit-border-radius: 0 5px 0 0;
+    -moz-border-radius: 0 5px 0 0;
+}
+.small_tree li:first-child::after{
+    border-radius: 5px 0 0 0;
+    -webkit-border-radius: 5px 0 0 0;
+    -moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.small_tree ul ul::before{
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 1px solid #ccc;
+    width: 0; height: 20px;
+}
+
+.small_tree li a img
+{
+    max-width:40px;
+}
+
+.small_tree li a{
+    /*border: 1px solid #ccc;*/
+    /*padding: 5px 3px;*/
+    text-decoration: none;
+    color: #666;
+    font-family: arial, verdana, tahoma;
+    font-size: 11px;
+    display: inline-block;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.small_tree li a:hover, .small_tree li a:hover+ul li a {
+    background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.small_tree li a:hover+ul li::after,
+.small_tree li a:hover+ul li::before,
+.small_tree li a:hover+ul::before,
+.small_tree li a:hover+ul ul::before{
+    border-color:  #94a0b4;
+}
+
+
+.cart-btn{
+    cursor: pointer;
+}
+.cart-btn:hover{
+    box-shadow: 3px 3px 5px purple;
+    color:purple;
+}
+
+.delivery-form{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    /*height: 100vh;*/
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.matrix-icon
+{
+    font-size: 70px!important;
+}
+
+.small_tree .matrix-icon
+{
+    font-size: 40px!important;
+}
+
+.matrix-img-container
+{
+    /*align-content: center;*/
+    /*display: block;*/
+    text-align: center;
+}
+.matrix-img
+{
+    max-width:100px;
+
+    display: inline;
+}
+
+.tree_small img
+{
+    max-width:30px!important;
+}
+
+.tree_small>circle
+{
+    max-width:30px!important;
+}
+
+/*stage Matrix*/
+
+.stage_matrix_icon
+{
+    font-size: 50px!important;
+}
+
+.tree_small_stage .stage_matrix_icon
+{
+    font-size: 40px!important;
+}
+
+.stage_matrix-img-container
+{
+    /*align-content: center;*/
+    /*display: block;*/
+    text-align: center;
+}
+.stage_matrix-img
+{
+    max-width:100px;
+
+    display: inline;
+}
+
+.tree_small_stage img
+{
+    max-width:40px!important;
+}
+
+.tree_small_stage .circle
+{
+    max-width:30px!important;
+}
+
+.tree_small_stage .tree li a
+{
+   border:none;
+    padding:10px 1px;
+    font-size:8px!important;
+}
+
+
+.breadcrumb-item.active
+{
+    color:white!important;
+}
+
+.li.notification_list.unread_notif
+{
+    background: #000!important; color:#333!important;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.sub_type
+{
+    width:28%;
+    padding:20px;
+    font-weight:bolder;
+    color:green;
+    border-radius:20%;
+}

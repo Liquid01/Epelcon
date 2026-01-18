@@ -1,0 +1,72 @@
+[05-Dec-2025 14:52:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/services.php on line 18
+[05-Dec-2025 14:53:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/services.php on line 18
+[06-Dec-2025 13:52:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/app.php on line 16
+[06-Dec-2025 13:52:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/database.php on line 16
+[06-Dec-2025 13:52:39 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/mail.php on line 19
+[07-Dec-2025 03:06:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/database.php on line 16
+[07-Dec-2025 03:06:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/app.php on line 16
+[07-Dec-2025 03:06:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/mail.php on line 19
+[07-Dec-2025 03:06:27 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/mail.php on line 19
+[07-Dec-2025 15:45:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/mail.php on line 19
+[07-Dec-2025 15:45:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/database.php on line 16
+[07-Dec-2025 15:45:38 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/app.php on line 16
+[07-Dec-2025 15:45:46 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/app.php on line 16
+[07-Dec-2025 15:45:47 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/app.php on line 16
+[10-Dec-2025 08:57:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/database.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/database.php on line 16
+[10-Dec-2025 08:57:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/app.php on line 16
+[10-Dec-2025 08:58:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/mail.php on line 19
+[10-Dec-2025 08:58:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/hxnddgzf/epelcon.com/config/mail.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/hxnddgzf/epelcon.com/config/mail.php on line 19
