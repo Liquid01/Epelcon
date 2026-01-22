@@ -17,8 +17,9 @@ class CropImageController extends Controller
     public function uploadCropImage(Request $request)
     {
         $image = $request->image;
+//        $full_image = $request->file('image');
         $request->full_image;
-        dd($request);
+//        dd($request);
         $username = app('current_user')->username;
         $mid = app('current_user')->membership_id;
         list($type, $image) = explode(';', $image);
@@ -26,14 +27,14 @@ class CropImageController extends Controller
         $image = base64_decode($image);
         $image_name= $username.'_'.$mid.'.png';
         $path = public_path('upload/profile/thumb/'.$image_name);
-        $full_path = public_path('upload/profile/big');
+//        $full_path = public_path('upload/profile/big');
 
         $user = User::where('username', $username)->first();
 
         $user->image = $image_name;
         $user->save();
 
-        $full_image->move($full_path, $image_name);
+//        $full_image->move($full_path, $image_name);
 
         file_put_contents($path, $image);
         return response()->json(['status'=>true]);

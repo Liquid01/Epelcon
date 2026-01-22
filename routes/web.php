@@ -155,53 +155,53 @@ Route::get('shop/category/{category}', 'ShoppingController@category_products')->
 //
 
 //SUBSCRIPTION
-Route::post('adverts/subscribe', 'AdvertController@subscribe_ads')->name('subscribe_ads');
+Route::post('adverts/subscribe', [App\Http\Controllers\AdvertController::class, 'subscribe_ads'])->name('subscribe_ads');
 //Route::get('/members/profile', [\App\Http\Controllers\MembersController::class, 'index'])->name('member_ptofile_;l
 //AUTH ROUTES
 //Route::get('sign-in', 'WebController@signin')->name('signin');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@dashboard')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('home');
 Route::get('/check-matrix/{username}', 'MatrixController@check_stage_matrix')->name('check_stage_matrix');//testing matrix
 
 //MEMBERS ROUTES GROUP
 Route::group(['prefix' => 'member', 'middleware' => 'members'], function () {
     //sleep(100);
 
-    Route::get('/api-test', 'SubscriptionController@api_test')->name('api_test');
+    Route::get('/api-test', [App\Http\Controllers\SubscriptionController::class, 'api_test'])->name('api_test');
 
 
-    Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
-    Route::get('/learn', 'HomeController@member_learn')->name('member_learn');//    FINANCE
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+    Route::get('/learn', [App\Http\Controllers\HomeController::class, 'member_learn'])->name('member_learn');//    FINANCE
 
-    Route::get('/shoppingBonus', 'UserRewardController@shoppingBonus')->name('shoppingBonus');
-    Route::get('/myCashBalance', 'UserRewardController@myCashBalance')->name('myCashBalance');
-    Route::get('/myTransfers', 'TransactionController@myTransfers')->name('myTransfers');
-    Route::get('/transactionHistory', 'TransactionController@transactionHistory')->name('transactionHistory');
+    Route::get('/shoppingBonus', [App\Http\Controllers\UserRewardController::class, 'shoppingBonus'])->name('shoppingBonus');
+    Route::get('/myCashBalance', [App\Http\Controllers\UserRewardController::class, 'myCashBalance'])->name('myCashBalance');
+    Route::get('/myTransfers', [App\Http\Controllers\TransactionController::class, 'myTransfers'])->name('myTransfers');
+    Route::get('/transactionHistory', [App\Http\Controllers\TransactionController::class, 'transactionHistory'])->name('transactionHistory');
     Route::get('/myInvestment', 'InvestmentController@myInvestment')->name('myInvestment');
     Route::get('/deposit', 'AccountController@member_deposit')->name('member_deposit');
 
 //    SAVINGS
-    Route::get('/savings', 'SavingsController@index')->name('member_savings');
-    Route::get('/savings/new', 'SavingsController@new_savings_account')->name('new_savings_account');
+    Route::get('/savings', [App\Http\Controllers\SavingsController::class, 'index'])->name('member_savings');
+    Route::get('/savings/new', [App\Http\Controllers\SavingsController::class, 'new_savings_account'])->name('new_savings_account');
     Route::post('/savings/new', 'SavingsController@store_savings_account')->name('store_savings_account');
     //    notifications
 
-    Route::get('/user-notifications', 'NotificationsController@get_user_notifications')->name('get_user_notifications');
-    Route::get('/unread-notifications', 'NotificationsController@get_unread_notifications')->name('get_unread_notifications');
-    Route::post('/mark-notifications-read/{user}', 'NotificationsController@mark_notifications_read')->name('mark_notifications_read');
+    Route::get('/user-notifications', [App\Http\Controllers\NotificationsController::class, 'get_user_notifications'])->name('get_user_notifications');
+    Route::get('/unread-notifications', [App\Http\Controllers\NotificationsController::class, 'get_unread_notifications'])->name('get_unread_notifications');
+    Route::post('/mark-notifications-read/{user}', [App\Http\Controllers\NotificationsController::class, 'mark_notifications_read'])->name('mark_notifications_read');
 
 
 //    profile
     Route::get('/my_profile', [\App\Http\Controllers\MembersController::class, 'my_profile'])->name('my_profile');
     Route::post('/my_profile/update/profile_pix', [\App\Http\Controllers\MembersController::class, 'update_profile_pix'])->name('update_profile_pix');
-    Route::post('/update/profile', 'MembersController@update_profile')->name('update_profile');
-    Route::post('/{username}/update/password', 'MembersController@member_update_password')->name('member_update_password');
+    Route::post('/update/profile', [App\Http\Controllers\MembersController::class, 'update_profile'])->name('update_profile');
+    Route::post('/{username}/update/password', [App\Http\Controllers\MembersController::class, 'member_update_password'])->name('member_update_password');
     Route::post('/update_bank', [\App\Http\Controllers\MembersController::class, 'member_update_bank'])->name('member_update_bank');
-    Route::get('/change_password', 'MembersController@member_change_password')->name('member_change_password');
-    Route::post('update_password', 'MembersController@update_member_password')->name('update_member_password');
-    Route::post('/update-profile-pix', 'CropImageController@uploadCropImage');
+    Route::get('/change_password', [App\Http\Controllers\MembersController::class, 'member_change_password'])->name('member_change_password');
+    Route::post('update_password', [App\Http\Controllers\MembersController::class, 'update_member_password'])->name('update_member_password');
+    Route::post('/update-profile-pix', [App\Http\Controllers\CropImageController::class, 'uploadCropImage']);
     Route::post('/profile/create', [\App\Http\Controllers\ProfileController::class, 'update_profile_others'])->name('update_profile_others');
 
 //    TREE and MATRIX

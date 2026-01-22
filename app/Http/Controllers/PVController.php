@@ -78,7 +78,7 @@ class PVController extends Controller
     {
         $next_dls = [];
         if (count($indexes) > 0) {
-            if ($this->generation < 15) {
+            if ($this->generation < 12) {
                 $this->generation++;
                 foreach ($indexes as $index) {
                     if ($index) {

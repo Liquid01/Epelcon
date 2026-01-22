@@ -149,18 +149,19 @@ class MembersController extends Controller
 
     public function update_profile_pix(Request $request)
     {
-//        dd($request);
+        $user = auth()->user();
         $request->validate(
             [
                 'profile_pix' => 'required'
             ]
         );
+
+        dd('here');
+
         if ($request->hasFile('profile_pix')) {
 
             $file = $request->file('image');
             $img = Image::make($file->getRealPath());
-            $width = $img->width();
-            $height = $img->height();
 
             $destinationPath = 'assets/img/profile';
             $filename = app('current_user')->username . '_';
@@ -170,6 +171,9 @@ class MembersController extends Controller
             })->save($thumbPath);
 
             $file->move($destinationPath, $filename);
+            $user->image = $filename;
+            $user->save();
+
 
             return redirect()->back()->with('success', 'The Profile Pix has been updated successfully');
 

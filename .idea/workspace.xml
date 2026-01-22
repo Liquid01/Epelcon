@@ -4,7 +4,70 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e272691a-8837-486d-a956-498fcda14245" name="Changes" comment="" />
+    <list default="true" id="e272691a-8837-486d-a956-498fcda14245" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CropImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CropImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MembersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MembersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PVController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PVController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Adacalibest_1618915947.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Angel17_1597173231.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Arolekuye_1624789988.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/CJWILLIAM POLLINUS_1687946779.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Chichi_1598010963.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Chrisvianney_1618957916.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Felix_1685683834.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Friday_1611346636.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Genema1_1685354070.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Godisgreat_1596750676.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/GreatGrace_1597936931.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Hismarheal_1624615253.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Ijaybillions_1687820964.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Jude_1631553997.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Julie4great_1683401609.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Kentonia_1686307612.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Madamfocus_1687429059.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Maggi Lala_1606492130.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Mandyf_1687095913.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Miracleseed_1687592615.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Miracleseed_1687698310.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Nancybabe_1687095345.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/QueenVictoria_1687005371.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Ritoj1_1606116367.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Ritoj2_1606118071.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Ritoj_1596632600.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/SirWills_1597039583.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Smiling_1687095546.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Soulsysta_1688484943.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Victor_1604638237.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Win247_1688773867.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/Zeeworld_1687085769.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/avatar-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/avatar12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/avatar2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/eren_1623501249.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/greatpeters_1597171751.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/liquid_1595799923.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/liquid_1595865911.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/liquid_1618068526.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/liquid_1660130969.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/liquid_1662760145.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload/profile/thumb/sylgreat3_1636221260.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/members/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/members/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-31b934f114eabc246b541addb8b458e3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-476fe65492650d7ce55de1f8f96024c5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-5802e590a92e23606bb54d2909564178.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-5b6a8384942db1c03ab2ddca280c9dbf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-6d96201ad95cad12367117063c707ebf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-6fd83ab5fb3f0a7e73c08ddae18f9934.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-7563160ca998bde672640aa1e68dfd08.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-af6a300c8cbdb761fde4dbad46137744.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-b2238725d3a9b1f49ec262da9e63ff86.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-d7e0bf33adda1a48ff4c9bdab757e083.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-f5442aeac73a6a9021bd7ce113d6a606.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-f613d6a3d267805582334742522e87f1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/_laravel_ide/discover-f6c2bb05e77ee582c501379f6998f2c4.php" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -135,24 +198,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/wamp64/www/epelcon/app/Http/Controllers",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/epelcon/app/Http/Controllers&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\epelcon\app\Http\Controllers" />
@@ -185,6 +248,8 @@
       <workItem from="1768468658772" duration="4538000" />
       <workItem from="1768597034611" duration="27736000" />
       <workItem from="1768723013999" duration="632000" />
+      <workItem from="1768911252607" duration="8619000" />
+      <workItem from="1769057359950" duration="2570000" />
     </task>
     <servers />
   </component>

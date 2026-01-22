@@ -62,9 +62,7 @@
                                     </a>
                                     <br>
                                     @csrf
-                                    <input style="color:black!important" type="file" id="profile_pix_input"
-                                           name="profile_pix"
-                                           style="visibility: hidden;">
+                                    <input style="color:black!important; visibility: hidden!important;" type="file" id="profile_pix_input" name="profile_pix" >
                                     <button class="btn btn-success" style="display:none;" id="upload_profile_pix">
                                         Upload
                                     </button>
@@ -97,8 +95,8 @@
                                         <a href="#">Cash:
                                             &#x20a6;{{number_format($rewards == null ? '0': $rewards->cash, 2)}}</a> |
                                         {{--                                        <a href="#">Shop: &#x20a6;{{$rewards == null? '0' : $rewards->shopping*400}}</a> |--}}
-                                        <a href="#">Left PVs: {{$rewards == null? '0' : $rewards->left_pvs}}</a> |
-                                        <a href="#">Right PVs: {{$rewards == null? '0' : $rewards->right_pvs}}</a>
+                                        <a href="#" id="left_pvs">Left PVs: {{$rewards == null? '0' : $rewards->left_pvs}}</a> |
+                                        <a href="#" id="right_pvs">Right PVs: {{$rewards == null? '0' : $rewards->right_pvs}}</a>
                                     </p>
                                 </div>
                             </div>
