@@ -116,62 +116,10 @@
                 </div>
 
                 <div class="col-md-4 col m4 x6 s12 l4">
-                    <div class="card border-radius-6">
-                        <div class="col-md-6 col m6 x6 s6 l6">
-                            <div class="card-width">
-                                <div class="">
-                                    <div class="card-content center-align">
-                                        <i class="material-icons amber-text fa fa-wallet"></i>
-                                        <p class="m-0">
-                                            <b id="cash_balance">
-                                                {{ number_format($rewards == null ? 0 : $rewards->cash, 0) }}
-                                            </b>
-                                        </p>
-                                        <p>Cash</p>
-                                        <p class="green-text  mt-3">
-                                            <i class="fa fa-arrow-circle-up"></i>
-                                        </p>
-                                        <p class="green-text  mt-3">
-                                            @include('members.transfer')
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col m6 l6 x6 s6">
-                            <div class="card-width">
-                                <div class="">
-                                    <div class="card-content center-align">
-                                        <i class="material-icons amber-text small-ico-bg mb-5"
-                                            style="font-size:20px; padding:5px 10px 10px 10px;">&#x20a6;</i>
-                                        <p class="m-0"><b
-                                                id="">{{ number_format((float) $user_withdrawals->sum('value'), 2) }}</b>
-                                        </p>
-                                        <p>Withdrawn</p>
-                                        <p class="red-text  mt-3">
-                                            <i class="fa fa-arrow-circle-down"></i>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-
-                <div class="col-md-4 col m4 x6 s12 l4">
 
                     <div class="card border-radius-6">
                         <div class="container">
                             <div class="col m3 s3">
-                                <p class="pl-1 pr-2" style="font-size:13px; text-align: left;">Matching<i
-                                        class=""></i>
-                                </p>
-                            </div>
-                            <div class="col m9 s9">
-                                {{--                                <p class="pl-1 " style="font-size:13px; text-align: right;">Matched: <i --}}
-                                {{--                                            class="matched"></i>PVs</p> --}}
-
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -204,7 +152,7 @@
                                             </p>
                                         @else
                                             <p style="font-size: 14px; margin-top:10px; text-align:center!important;">
-                                                Balance
+                                                Matching
                                             </p>
                                         @endif
                                     </div>

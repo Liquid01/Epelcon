@@ -124,6 +124,7 @@ class TransactionController extends Controller
 
     protected function member_withdraw(Request $request)
     {
+        dd('hi');
         $request->validate([
             'amount' => 'integer|required|min:1000'
         ]);

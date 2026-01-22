@@ -105,7 +105,7 @@ class HomeController extends Controller
 //        dd($rewards, $investment);
         if ($user->is_admin == 1){
 
-          $withdrawals = Withdrawal::where('status', 3)->latest()->get();
+          $withdrawals = Withdrawal::where('status', 0)->latest()->get();
             $latest_withdrawals = $withdrawals->take(12);
             return view('admin.dashboard', compact('data', 'latest_withdrawals', 'withdrawals'));
         }

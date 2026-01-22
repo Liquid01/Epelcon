@@ -18,7 +18,7 @@ class WithdrawalController extends Controller
     public function index()
     {
         $all_withdrawals = Withdrawal::all();
-        $withdrawals = Withdrawal::where('status', 3)->latest()->paginate(20);
+        $withdrawals = Withdrawal::where('status', 0)->latest()->paginate(20);
         $banks = Bank::all();
         $data = ['paid'=>0];
 
