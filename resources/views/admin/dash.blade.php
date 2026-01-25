@@ -22,7 +22,7 @@
                             <div class="card-content center-align">
                                 <i class="material-icons amber-text small-ico-bg mb-5 fa fa-coins"></i>
                                 <p class="m-0"><b
-                                            id="today_members">{{\App\User::where('created_at', today())->get()->count()}}</b>
+                                            id="today_members">{{\App\User::where('created_at', \Carbon\Carbon::today())->get()->count()}}</b>
                                 </p>
                                 <p>New</p>
                                 <p class="green-text  mt-3">
@@ -54,10 +54,10 @@
                         <div class="">
                             <div class="card-content center-align">
                                 <i class="material-icons amber-text small-ico-bg mb-5 fa fa-coins"></i>
-                                <p class="m-0"><b id="total_used_pins">0</b></p>
+                                <p class="m-0"><b id="total_used_pins">{{\App\Pin::where('status', 5)->count()}}</b></p>
                                 <p>PINS</p>
                                 <p class="green-text  mt-3">
-                                    Used: {{\App\Pin::where('status', 5)->count()}}
+                                    Used
                                 </p>
                             </div>
                         </div>
@@ -114,17 +114,76 @@
 
                                     <div class="card-header">
                                         <p class="mb-1">
+                                            Latest Transactions
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="table table-responsive">
+                                            <table class="table table-responsive">
+                                                <thead>
+                                                <tr>
+                                                    <th>Username</th>
+                                                    <th>Type</th>
+                                                    <th>For</th>
+                                                    <th>Amount</th>
+                                                    <th>Date</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($latest_transactions as $transaction)
+                                                    <tr>
+                                                        <td>
+                                                            <p class="transact_details">
+                                                                {{$transaction->owner}}
+                                                            </p>
+                                                        </td>
+                                                        <td>
+                                                            <p class="transact_details">
+                                                                {{$transaction->type}}
+                                                            </p>
+                                                        </td>
+                                                        <td>
+                                                            <p class="transact_details">
+                                                                {{$transaction->for}}
+                                                            </p>
+                                                        </td>
+                                                        <td>
+                                                            <p class="transact_details">
+                                                                {{$transaction->amount}}
+                                                            </p>
+                                                        </td>
+                                                        <td>
+                                                            <p class="transact_details">
+                                                                {{$transaction->created_at->diffForHumans()}}
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear-fix mt-5">
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-content">
+
+                                    <div class="card-header">
+                                        <p class="mb-1">
                                             ALL WITHDRAWALS
                                         </p>
                                     </div>
                                     <div class="row">
                                         <div class="col l6 m6 s12 mb-1">
                                             <p class="orange-text">TOTAL UNPAID:
-                                                &#x20a6;{{$withdrawals->where('status', 0)->sum('value')}}</p>
+                                                &#x20a6;{{number_format($all_withdrawals->where('status', 0)->sum('value'), 2)}}</p>
                                         </div>
                                         <div class="col l6 m6 s12 mb-1">
                                             <p class="green-text">TOTAL PAID:
-                                                &#x20a6;{{$withdrawals->where('status', 1)->sum('value')}}
+                                                &#x20a6;{{number_format($all_withdrawals->where('status', 1)->sum('value'),2)}}
                                             </p>
                                         </div>
                                     </div>
@@ -134,9 +193,9 @@
                         <div class="row">
                             <div class="col s12">
 
-                                @isset($latest_withdrawals)
+                                @isset($withdrawals)
                                     <span class="hide">{{$n=0}}</span>
-                                    @forelse($latest_withdrawals as $withdrawal)
+                                    @forelse($withdrawals as $withdrawal)
                                         <p class="hidden hide">{{$user = \App\User::where('username', $withdrawal->by)->first()}}</p>
 
                                         <div class="col l3 s12 mt-2 card">
@@ -146,7 +205,8 @@
                                             <div class="card-content"
                                                  style="padding:10px; font-size:12px;">
                                                 <p>
-                                                    <strong style="color:black; font-weight:bold;"><i class="fa fa-clock"></i></strong> {{\Carbon\Carbon::createFromDate($withdrawal->created_at)->diffForHumans()}}
+                                                    <strong style="color:black; font-weight:bold;"><i
+                                                                class="fa fa-clock"></i></strong> {{\Carbon\Carbon::createFromDate($withdrawal->created_at)->diffForHumans()}}
                                                 </p>
                                                 <p><strong style="color:black; font-weight:bold;">STATUS: </strong>
                                                     @if($withdrawal->status == 0)
@@ -174,10 +234,10 @@
                                                 <div>
                                                     <strong style="color:darkorange;">ACCOUNT:</strong>
                                                     <span>
-                                                                            {{$user->bank_account_number}} <br>
-{{--                                                                            {{$user->bank_account_name}} <br>--}}
-                                                                            <strong style="color:darkorange;">BANK:</strong> {{$user->bank?$user->bank['name']:''}}
-                                                                        </span>
+                                                        {{$user->bank_account_number}}
+                                                        <br>
+                                                        <strong style="color:darkorange;">BANK:</strong> {{$user->bank?$user->bank['name']:''}}
+                                                    </span>
                                                 </div>
                                             </div>
                                             @if($withdrawal->status == 0)
@@ -213,7 +273,7 @@
                         <div class="content-right mt-2 mb-2">
                             <a href="{{route('all_withdrawals')}}" class="btn btn-royal">All Withdrawals</a>
                         </div>
-{{--                        {{$latest_withdrawals->links()}}--}}
+                        {{$withdrawals->links()}}
                     </div>
                 </div>
             </div>

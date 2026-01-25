@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bonus;
 use App\Matching;
+use App\Transaction;
 use App\User;
 use App\Withdrawal;
 use Carbon\Carbon;
@@ -37,7 +38,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (auth()->user()->is_admin == 2){
+        if (auth()->user()->is_admin == 2) {
             return view('support.index');
         }
 //        dd('no');
@@ -51,7 +52,7 @@ class HomeController extends Controller
 //        $summed_investment_amount = $investment->sum('amount');
 //        $summed_interest_on_investment = $investment->sum('interest');
 //        dd($rewards, $investment);
-        if (auth()->user()->is_admin == 1){
+        if (auth()->user()->is_admin == 1) {
             return view('admin.dashboard');
         }
 
@@ -70,44 +71,44 @@ class HomeController extends Controller
             ->where('status', 1)->get();
 
 //        check if the user has bonus account, get it or create a new one
-          $matching_bonus = Bonus::where('user_id', $user->id)
-              ->where('bonus_type_id', config('app.matching_bonus'))->first();
+        $matching_bonus = Bonus::where('user_id', $user->id)
+            ->where('bonus_type_id', config('app.matching_bonus'))->first();
 
-          $matchings = Matching::where('user_id', $user->id)
-              ->whereYear('created_at', Carbon::now()->year)
-              ->whereMonth('created_at', Carbon::now()->month)
-              ->sum('amount');
+        $matchings = Matching::where('user_id', $user->id)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->sum('amount');
 
-          $todays_matchings = Matching::where('created_at', Carbon::today())->get();
+        $todays_matchings = Matching::where('created_at', Carbon::today())->get();
 //          dd($todays_matchings);
 
 
 //        ->whereMonth('created_at', Carbon::now()->month)->get();
 //          dd($matchings);
-            if (!$matching_bonus)
-            {
+        if (!$matching_bonus) {
 //                dd('hi');
-                $bonus = new Bonus([
-                    'user_id' => $user->id,
-                    'bonus_type_id' => config('app.matching_bonus'),
-                    'amount' => 0.00,
-                ]);
+            $bonus = new Bonus([
+                'user_id' => $user->id,
+                'bonus_type_id' => config('app.matching_bonus'),
+                'amount' => 0.00,
+            ]);
 
-                $bonus->save();
-            }
+            $bonus->save();
+        }
 
-            $this_withdrawal = Withdrawal::where('by', $user->username)
-                ->where('status', 0)->where('type', 'MATCHING_BONUS')
-                ->whereMonth('created_at', date('m'))
-                ->whereYear('created_at', date('Y'))
-                ->get();
+        $this_withdrawal = Withdrawal::where('by', $user->username)
+            ->where('status', 0)->where('type', 'MATCHING_BONUS')
+            ->whereMonth('created_at', date('m'))
+            ->whereYear('created_at', date('Y'))
+            ->get();
 
 //        dd($rewards, $investment);
-        if ($user->is_admin == 1){
+        if ($user->is_admin == 1) {
 
-          $withdrawals = Withdrawal::where('status', 0)->latest()->get();
-            $latest_withdrawals = $withdrawals->take(12);
-            return view('admin.dashboard', compact('data', 'latest_withdrawals', 'withdrawals'));
+            $all_withdrawals = Withdrawal::all();
+            $withdrawals = Withdrawal::latest()->paginate(12);
+            $latest_transactions = Transaction::latest()->paginate(10);
+            return view('admin.dashboard', compact('data', 'latest_transactions', 'withdrawals', 'all_withdrawals'));
         }
 
 //        dd($matching_bonus);
@@ -140,7 +141,8 @@ class HomeController extends Controller
         dd($downlines);
     }
 
-    function getAllDownlines($parents) {
+    function getAllDownlines($parents)
+    {
         $data = User::where('parent', 'IN', $parents)->get();
 //        $data = "SELECT * FROM users WHERE parent_id IN (/*parents*/)";
         $new_parent_ids = array();

@@ -35,13 +35,12 @@
             </div>
         </div>
     </div>
-    </div>
 
     <div class="container border-bottom-1">
         <div class="content-wrapper-before" style=""></div>
         <div class="breadcrumbs-light pb-0 pt-4" id="breadcrumbs-wrapper">
             <!-- Search for small screen-->
-          
+
         </div>
     </div>
     <div class="col s12">
@@ -143,10 +142,10 @@
                                         @endphp
                                         @if ($settings->status == 1)
                                             <p style="font-size: 14px; margin-top:10px; text-align:center!important;"
-                                                class="">
+                                               class="">
                                                 <a href="javascript:void(0);" style="margin-top: -15px;"
-                                                    data-target="modal-withdraw-matching"
-                                                    class="modal-trigger  waves-effect waves-light">
+                                                   data-target="modal-withdraw-matching"
+                                                   class="modal-trigger  waves-effect waves-light">
                                                     Withdraw
                                                 </a>
                                             </p>
@@ -183,8 +182,8 @@
                                         </p>
                                         <p>
                                             <a href="javascript:void(0);"
-                                                style="text-align:center; font-size: 12px; text-align:center!important;"
-                                                class="">
+                                               style="text-align:center; font-size: 12px; text-align:center!important;"
+                                               class="">
                                                 @isset($matching)
                                                     Bal:
                                                     {{ number_format($matching_bonus->amount - $matching_bonus->withdrawn, 2) }}
@@ -223,7 +222,7 @@
                         <div class="container">
                             <div class="col m3 s3">
                                 <p class="pl-1 pr-2" style="font-size:13px; text-align: left;">Latest<i
-                                        class=""></i>
+                                            class=""></i>
                                 </p>
                             </div>
                             <div class="col m9 s9">
@@ -392,7 +391,7 @@
             </div>
 
 
-        @include('includes.withdraw_modal')
+            @include('includes.withdraw_modal')
 
         </div>
     </div>
