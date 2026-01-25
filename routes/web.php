@@ -389,31 +389,20 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 //    events
 
     Route::get('/events', 'Admin\EventController@index')->name('admin_events');
-
     Route::get('/events/{event}/edit', 'Admin\EventController@edit')->name('edit_event');
-
     Route::get('/events/{event}/delete', 'Admin\EventController@destroy')->name('delete_event');
-
     Route::get('/events/attendants', 'Admin\EventController@attendance')->name('event_attendance');
-
     Route::get('/events/create', 'Admin\EventController@create')->name('create_event');
-
     Route::get('/events/gallery', 'Admin\GalleryController@index')->name('admin_gallery');
-
     Route::get('/gallery/create', 'Admin\GalleryController@create')->name('create_gallery');
-
     Route::post('/gallery/create', 'Admin\GalleryController@store')->name('save_gallery_upload');
 
 //    orders
-
     Route::get('/orders', 'Admin\OrderController@all_orders')->name('all_orders');
-
     Route::get('/orders/{order}/edit', 'Admin\OrderController@edit')->name('edit_order');
-
     Route::get('/orders/{order}/delete', 'Admin\OrderController@destroy')->name('delete_order');
 
 //  MATRIX
-//
 //    Route::get('/get_downline_count', 'DownlineController@get_downline_count')->name('admin_get_downline_count');
 //    Route::get('/user_downline_tree/{username}', 'MatrixController@user_downline_tree')->name('admin_user_downline_tree');
     Route::get('/stage_matrix/{username}', 'Admin\MatrixController@check_member_matrix')->name('admin_check_member_matrix');

@@ -14,141 +14,134 @@ class PVController extends Controller
         $this->middleware('auth');
     }
 
-    private $generation = 0;
-    private $generation2 = 0;
-    private $total = 0;
-    private $total2 = 0;
-
     public function member_get_pvs()
     {
-        $user = app('current_user');
+        $user = auth()->user();
         $user_rewards = user_reward::where('membership_id', $user->membership_id)->first();
 
         $left_index = $user->left_index;
         $right_index = $user->right_index;
 
+        // Preload all users with rewards into memory for caching
+        $allUsers = User::with('rewards')->get()->keyBy('username');
+
         // LEFT SIDE
-        $this->resetTotals();
+        $left = 0;
         if ($left_index) {
-            $left_pvs = $this->get_index_pvs([$left_index], $user);
-            $left = $left_pvs[0];
-            $left_extra = $left_pvs[1];
-        } else {
-            $left = 0;
-            $left_extra = 0;
+//            echo "_____________LEFT:::: <br> $left_index --- first --- PVS";
+            $left = $this->get_index_pvs([$left_index], $user, $allUsers);
+
+//            echo "<br> <br> &&&&&&&&&&&&&&  LEFT TOTAL::::::::::::::::" . "     $left";
         }
 
         // RIGHT SIDE
-        $this->resetTotals();
+        $right = 0;
         if ($right_index) {
-            $right_pvs = $this->get_index_pvs([$right_index], $user);
-            $right = $right_pvs[0];
-            $right_extra = $right_pvs[1];
-        } else {
-            $right = 0;
-            $right_extra = 0;
+//            echo "<br> <br>". "____________RIGHT:::: <br> $left_index --- first --- PVS";
+            $right = $this->get_index_pvs([$right_index], $user, $allUsers);
+
+//            echo "<br> <br> &&&&&&&&&&&&&& RIGHT TOTAL::::::::::::::::" . "     $right";
         }
 
+        // Own points
         $points = $user_rewards ? $user_rewards->points : 0;
-        $total_pvs = $left + $right + $left_extra + $right_extra + $points;
 
+        // Total PVs
+        $total_pvs = $left + $right + $points;
+
+        // Save or update PV record
         $pvs = PV::where('user_id', $user->id)->first();
         if (!$pvs) {
-            $pvs = $this->create_member_pvs($user, $left, $right, $left_extra, $right_extra);
+            $pvs = $this->create_member_pvs($user, $left, $right);
         } else {
             $pvs->left = $left;
             $pvs->right = $right;
-            $pvs->left_extra = $left_extra;
-            $pvs->right_extra = $right_extra;
             $pvs->save();
         }
 
         return response()->json([
-            "left" => $left + $left_extra,
-            "right" => $right + $right_extra,
-            "left_extra" => $left_extra,
-            "right_extra" => $right_extra,
+            "left" => $left,
+            "right" => $right,
             "total_pvs" => $total_pvs,
             "points" => $points,
         ]);
     }
 
-    // Recursive PV calculation based on sponsorship chain
-    public function get_index_pvs($indexes, User $rootUser)
+    /**
+     * Recursive PV calculation based on sponsorship chain.
+     * Always traverse down to 12 generations, even if node not in chain.
+     */
+    private function get_index_pvs(array $indexes, User $rootUser, $allUsers, $generation = 1, $dtotal = 0)
     {
+        if ($generation > 12) {
+            return 0;
+        }
+
+        $total = $dtotal;
         $next_dls = [];
-        if (count($indexes) > 0) {
-            if ($this->generation < 12) {
-                $this->generation++;
-                foreach ($indexes as $index) {
-                    if ($index) {
-                        $user = User::where('username', $index)->first();
+//echo "<br> <br>  _____________________________________ <br> <br>";
+//        echo " ************* GENERATION ' .$generation . '*******************";
+//        echo "<br> _____________________________________";
 
-                        // Only count if user is in sponsorship chain
-                        if ($user && $this->isSponsoredByChain($user, $rootUser)) {
-                            $user_reward = $user->rewards;
-                            $points = $user_reward ? $user_reward->points : 0;
-                            $this->total += $points;
 
-                            $sponsored = User::where('sponsor', $user->username)->pluck('username')->toArray();
-                            $next_dls = array_merge($next_dls, $sponsored);
-                        }
-                    }
-                }
-                if (count($next_dls) > 0) {
-                    $this->get_index_pvs($next_dls, $rootUser);
-                }
-            } else {
-                $this->generation2++;
-                foreach ($indexes as $index) {
-                    if ($index) {
-                        $user = User::where('username', $index)->first();
-                        if ($user && $this->isSponsoredByChain($user, $rootUser)) {
-                            $user_reward = $user->rewards;
-                            $points2 = $user_reward ? $user_reward->points : 0;
-                            $this->total2 += $points2;
+        foreach ($indexes as $index) {
 
-                            $sponsored = User::where('sponsor', $user->username)->pluck('username')->toArray();
-                            $next_dls = array_merge($next_dls, $sponsored);
-                        }
-                    }
+
+            if ($index && isset($allUsers[$index])) {
+
+                $user = $allUsers[$index];
+//                echo "<br> <br>";
+//                echo "TURN OF :::: $index --- ON::: $rootUser->username ::::SPONSOR: $user->sponsor ";
+                // Count PVs only if user is in sponsorship chain
+                if ($this->isSponsoredByChain($user, $rootUser, $allUsers)) {
+                    $points = $user->rewards ? $user->rewards->points : 0;
+                    $total += $points;
+
+//                    echo "USERNAME $user->username --- PVS    $points --- TOTAL  $total PVS";
+
                 }
-                if (count($next_dls) > 0) {
-                    $this->get_index_pvs($next_dls, $rootUser);
-                }
+
+                // Always traverse their downlines regardless
+                $sponsored = $allUsers->filter(function ($u) use ($user) {
+                    return $u->sponsor === $user->username;
+                })->keys()->toArray();
+
+                $next_dls = array_merge($next_dls, $sponsored);
             }
         }
-        return [$this->total, $this->total2];
+
+        if (count($next_dls) > 0) {
+            $total += $this->get_index_pvs($next_dls, $rootUser, $allUsers, $generation + 1, $total);
+        }
+
+        return $total;
     }
 
-    private function isSponsoredByChain(User $candidate, User $root)
+    /**
+     * Check if a candidate user is ultimately sponsored by the root user.
+     */
+    private function isSponsoredByChain(User $candidate, User $root, $allUsers)
     {
         $current = $candidate;
+//        echo "<br> ************** CHECKING ' .$candidate->username . '******************* <br>";
+
         while ($current && $current->sponsor) {
             if ($current->sponsor === $root->username) {
+//                echo "<br> ************** FOUND INSIDE ' .$candidate->username . '******************* <br>";
+
                 return true;
             }
-            $current = User::where('username', $current->sponsor)->first();
+            $current = $allUsers[$current->sponsor] ?? null;
         }
         return false;
     }
 
-    private function resetTotals()
-    {
-        $this->total = 0;
-        $this->total2 = 0;
-        $this->generation = 0;
-        $this->generation2 = 0;
-    }
-
-    public function create_member_pvs(User $user, $left, $right, $left_extra, $right_extra)
+    private function create_member_pvs(User $user, $left, $right)
     {
         $pvs = new PV([
             'user_id' => $user->id,
             'left' => $left,
             'right' => $right,
-            'left_extra' => $left_extra,
-            'right_extra' => $right_extra,
         ]);
         $pvs->save();
         return $pvs;

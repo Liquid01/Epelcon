@@ -17,7 +17,7 @@ class StockistController extends Controller
 
     public function all_stockists()
     {
-        $stores = Store::all();
+        $stores = Store::paginate(15);
 //        dd($stockists);
         return view('stockists.list', compact('stores'));
     }

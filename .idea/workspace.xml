@@ -6,10 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e272691a-8837-486d-a956-498fcda14245" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/WithdrawalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/WithdrawalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/members/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/members/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/WalletController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/WalletController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PVController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PVController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StockistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StockistController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/members/changePassword.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/members/changePassword.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/back_seller.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/back_seller.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/web.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/web.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/wallets/fund.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/wallets/fund.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,6 +197,8 @@
       <workItem from="1768723013999" duration="632000" />
       <workItem from="1768911252607" duration="8619000" />
       <workItem from="1769057359950" duration="7214000" />
+      <workItem from="1769193024738" duration="13374000" />
+      <workItem from="1769256276107" duration="18157000" />
     </task>
     <servers />
   </component>

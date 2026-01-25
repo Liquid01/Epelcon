@@ -53,56 +53,24 @@ class WalletController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function admin_load_wallet(Request $request)
-    {
-//        dd($request);
-        $request->validate([
-           'username' => 'string|required|exists:users,username',
-           'amount' => 'integer|required',
-        ]);
-        $amount = $request->amount;
-        $user = User::where('username', $request->username)->first();
-
-
-
-        if ($user)
-        {
-            $reward = user_reward::where('membership_id', $user->membership_id)->first();
-            try {
-//                $reward->cash += $request->amount;
-//                $reward->save();
-
-                $transaction_c = new TransactionController();
-
-                $transaction = $transaction_c->credit_cash($user, $amount, 'CREDIT', 'STOCKIST_WALLET_FUNDING', );
-
-            }catch (Exception $exception)
-            {
-                return redirect()->back()->with('failed', 'Could Not Add Funds to Wallet, contact Admin');
-            }
-        }
-
-        return redirect()->back()->with('success', 'Account Funded with '.$request->amount. ' Successfully');
-    }
 
     public function admin_load_stockist(Request $request)
     {
 //        dd($request);
         $request->validate([
            'username' => 'string|required|exists:users,username',
-           'amount' => 'integer|required',
+           'amount' => 'integer|required|min:1000',
         ]);
+
         $amount = $request->amount;
-        $user = User::where('username', $request->username)->first();
-        if ($user)
+        $user_to_fund = User::where('username', $request->username)->first();
+        if ($user_to_fund)
         {
-            $reward = user_reward::where('membership_id', $user->membership_id)->first();
+            $reward = user_reward::where('membership_id', $user_to_fund->membership_id)->first();
             try {
-//                $reward->cash += $request->amount;
-//                $reward->save();
-//dd($user);
+//                LOG
                 $transaction_c = new TransactionController();
-                $transaction = $transaction_c->credit_stockist($user, $amount, 'CREDIT', 'STOCKIST_WALLET_FUNDING', );
+                $transaction_c->credit_stockist($user_to_fund, $amount, 'CREDIT', 'STOCKIST_WALLET_FUNDING' );
 
             }catch (Exception $exception)
             {

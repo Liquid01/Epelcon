@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Lifeseed Worldwide">
-    <title>Epelcon Global: Saving Lives, Raising Wealth.</title>
+    <title>Epelcon Global: Long Life and Prosperity for All.</title>
     <link href="{{asset('assets/css/themify-icons.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/flaticon.css')}}" rel="stylesheet">
@@ -30,12 +30,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js')}}"></script>
     <![endif]-->
 </head>
-
 <body>
 <!-- start page-wrapper -->
-
 <div class="page-wrapper">
-
     <!-- start preloader -->
     <div class="preloader">
         <div class="sk-folding-cube">
@@ -47,23 +44,44 @@
     </div>
     <!-- end preloader -->
     <!-- Start header -->
-
     <header id="header" class="wpo-site-header wpo-header-style-3">
         <div class="topbar">
             <div class="container">
                 <div class="row">
                     <div class="col col-md-12 col-sm-12">
-                        <div class="contact-info d-flex" style="display: flex; justify-content: left; align-items: center;">
+                        <div class="contact-info d-flex"
+                             style="display: flex; justify-content: left; align-items: center;">
                             <ul class="pull-left">
-                                <li><a class="btn btn-raised btn-sm btn-success " style="color: white!important;" href="{{route('login')}}">Login</a></li>
-                                <li><a class="btn btn-raised btn-sm btn-warning " style="color: white!important;" href="{{route('register')}}">Register</a></li>
+                                @if(auth()->check())
+                                    <li>
+                                        <a class="btn btn-raised btn-sm btn-success "
+                                           onclick="document.getElementById('logout_form').submit()"
+                                           style="color: white!important;" href="javascript:void(0);">Logout</a>
+                                    </li>
+                                    <li>
+                                        <a class="btn btn-raised btn-sm btn-warning " style="color: white!important;"
+                                           href="{{route('dashboard')}}">{{auth()->user()->username}}</a>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a class="btn btn-raised btn-sm btn-success " style="color: white!important;"
+                                           href="{{route('login')}}">Login</a>
+                                    </li>
+                                    <li>
+                                        <a class="btn btn-raised btn-sm btn-warning " style="color: white!important;"
+                                           href="{{route('register')}}">Register</a>
+                                    </li>
+                                @endif
+
+
                                 <li>
                                     <p class="text-left" style="font-size: 11px; color:green; padding:15px;">
                                         Take care of yourself, and make sure you help others.
                                     </p>
                                 </li>
                             </ul>
-                            
+                            <form id="logout_form" method="post" action="{{route('logout')}}">@csrf</form>
+
                         </div>
                     </div>
                 </div>

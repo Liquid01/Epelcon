@@ -54,7 +54,7 @@
 
                                     <div class="input-container">
                                         <input type="password" name="password" id="password"
-                                               placeholder="Enter new pasword"
+                                               placeholder="Enter new password"
                                                class="{{$errors->has('password'? ' is-invalid': '')}}"
                                                value="{{old('password')}}" required="required" autocomplete="off"/>
                                         <div class="bar"></div>

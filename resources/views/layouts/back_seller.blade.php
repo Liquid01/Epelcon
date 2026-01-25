@@ -9,13 +9,8 @@
     <meta name="description" content="Epelcon Global is a world of successful entrepreneurs">
     <meta name="keywords" content="Epelcon Global: Dashboard">
     {{--<meta name="author" content="ThemeSelect">--}}
-<<<<<<< Updated upstream
-    <title>GlobalMinds Agro @yield('page_title') </title>
-=======
 
-    <title>GlobalMinds Agro @yield('page_title') </title>
-
->>>>>>> Stashed changes
+    <title>Epelcon Global @yield('page_title') </title>
     <link rel="apple-touch-icon" href="{{asset('assets/img/favicon.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/images/favicon.png')}}">
 {{--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--}}
@@ -488,7 +483,7 @@
         <div class="container">
 
             <span>&copy; {{now()->year}}
-                <a href="{{url('/')}}" target="_blank">GlobalMinds Agro</a> All rights reserved.
+                <a href="{{url('/')}}" target="_blank">Epelcon Global Healthcare</a> All rights reserved.
 
             </span>
 
