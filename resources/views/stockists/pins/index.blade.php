@@ -32,7 +32,10 @@
                                 <a href="{{route('my_used_pins')}}" style="color:orangered; font-weight: bolder; text-transform: uppercase" class="{{$data['used'] == 1?'btn white-text':''}}  btn-success btn-raised">Used</a>
                             </span>
                             <span class="pl-1 pr-1 mr-2  right">
-                                <a href="{{route('new_pin')}}" style="color:green; font-weight: bolder; text-transform: uppercase" class="btn white-text btn-success btn-raised">New</a>
+                                <a href="{{route('new_pin')}}" style="color:green!important; font-weight: bolder; text-transform: uppercase" class="btn-raised">
+                                    <i class="fa fa-plus"></i>
+                                    New
+                                </a>
                             </span>
                         </div>
 
