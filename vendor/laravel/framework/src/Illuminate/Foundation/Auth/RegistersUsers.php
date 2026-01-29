@@ -182,14 +182,14 @@ trait RegistersUsers
 //        dd($starter);
         $starter->save();
 //
-        $transaction = new TransactionController();
+//        $transaction = new TransactionController();
 //
-        $transaction->log_transaction('CREDIT', 0.00, 'REGISTRATION_POINTS_REWARD', $user->username);
-//        return;
+//        $transaction->log_transaction('CREDIT', 0.00, 'REGISTRATION_POINTS_REWARD', $user->username);
+        return;
     }
 
 //    Credit SPONSOR
-    public function credit_sponsor_for_referral($username, $package)
+    public function credit_sponsor_for_referral($username, Package $package)
     {
 
         $bonus = $package->amount * 0.30;
@@ -208,7 +208,7 @@ trait RegistersUsers
 //log
                 $transaction = new TransactionController();
 
-                $transaction->log_transaction('CREDIT', $bonus, 'REFERALS_SHOPPPING BONUS_REWARD', $sponsor_username);//
+                $transaction->log_transaction('CREDIT', $bonus, strtoupper($package->name) .'_REFERALS_BONUS', $sponsor_username);//
 
 
 //            TODO

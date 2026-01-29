@@ -35,7 +35,7 @@ class TransactionController extends Controller
     {
         $settings = Setting::where('item', 'REFERRALS_WITHDRAWALS')->first();
 
-        $transactions = Transaction::where('owner', current_user()->username)->paginate(20);
+        $transactions = Transaction::where('owner', auth()->user()->username)->paginate(20);
 
         return view('members.transactions', compact('transactions', 'settings'));
     }
@@ -124,7 +124,7 @@ class TransactionController extends Controller
 
     protected function member_withdraw(Request $request)
     {
-        dd('hi');
+//        dd('hi');
         $request->validate([
             'amount' => 'integer|required|min:1000'
         ]);

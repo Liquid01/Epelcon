@@ -407,8 +407,8 @@ class MembersController extends Controller
 
     public function member_referrals()
     {
-        $user = app('current_user');
-        $referrals = User::where('sponsor', $user->username)->get();
+        $referrals = User::where('sponsor',  auth()->user()->username)
+        ->with('package')->get();
 
         return view('members.referrals', compact('referrals'));
 

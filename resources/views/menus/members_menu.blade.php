@@ -33,7 +33,7 @@
             </li>
             <li>
                 <a class="waves-effect waves-cyan"
-                   href="#!" data-i18n="">
+                   href="{{ route('member_referrals') }}" data-i18n="">
                     <i class="material-icons">radio_button_unchecked</i>
                     <span>My Referrals</span>
                 </a>

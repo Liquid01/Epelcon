@@ -94,6 +94,16 @@ class User extends Authenticatable
         return $this->hasOne(Store::class);
     }
 
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class, 'owner', 'username');
+    }
+
+    public function investments()
+    {
+        return $this->hasMany(Investment::class, 'membership_id', 'membership_id');
+    }
+
     public static function get_user_by_username($username){
         $user = User::where('username', $username)->first();
         if ($user)

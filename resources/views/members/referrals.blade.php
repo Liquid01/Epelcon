@@ -25,7 +25,7 @@
 
 
         <div class="col s12">
-            <div class="container">
+            <div class="container" style="padding-left:0px!important; padding-right: 0px!important;">
                 <div class="section section-data-tables">
                     <div class="card center-align">
                         <!-- DataTables Row grouping -->
@@ -50,13 +50,14 @@
                                                             </th>
 
                                                             <th class="sorting_disabled" rowspan="1" colspan="1"
-                                                                style="width: 79px;">First Name
+                                                                style="width: 79px;">Username
+                                                            </th>
+                                                            
+                                                            <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                                style="width: 50px;">Amount
                                                             </th>
                                                             <th class="sorting_disabled" rowspan="1" colspan="1"
-                                                                style="width: 135px;">Last Name.
-                                                            </th>
-                                                            <th class="sorting_disabled" rowspan="1" colspan="1"
-                                                                style="width: 50px;">Package
+                                                                style="width: 50px;">Amount
                                                             </th>
                                                             <th class="sorting_disabled" rowspan="1" colspan="1"
                                                                 style="width: 151px;">Date
@@ -71,9 +72,9 @@
                                                                 <tr role="row" class="even">
 
                                                                     <td>{{$n++}}</td>
-                                                                    <td>{{$referral->firstname}}</td>
-                                                                    <td>{{$referral->lastname}}</td>
+                                                                    <td>{{$referral->username}}</td>
                                                                     <td>{{$referral->package->name}}</td>
+                                                                    <td>&#x20A6;{{number_format($referral->package->referral_bonus, 2)}}</td>
                                                                     <td>{{$referral->created_at}}</td>
                                                                 </tr>
                                                             @empty
@@ -86,9 +87,9 @@
                                                         <tfoot>
                                                         <tr>
                                                             <th rowspan="1" colspan="1">SN</th>
-                                                            <th rowspan="1" colspan="1">Firstname</th>
-                                                            <th rowspan="1" colspan="1">Lastname</th>
+                                                            <th rowspan="1" colspan="1">Username</th>
                                                             <th rowspan="1" colspan="1">Package</th>
+                                                            <th rowspan="1" colspan="1">Amount</th>
                                                             <th rowspan="1" colspan="1">Date</th>
                                                         </tr>
                                                         </tfoot>

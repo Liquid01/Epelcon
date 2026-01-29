@@ -103,7 +103,7 @@ class PVController extends Controller
 
                 // Always traverse their downlines regardless
                 $sponsored = $allUsers->filter(function ($u) use ($user) {
-                    return $u->sponsor === $user->username;
+                    return strtolower($u->sponsor) === strtolower($user->username);
                 })->keys()->toArray();
 
                 $next_dls = array_merge($next_dls, $sponsored);
@@ -126,14 +126,22 @@ class PVController extends Controller
 //        echo "<br> ************** CHECKING ' .$candidate->username . '******************* <br>";
 
         while ($current && $current->sponsor) {
-            if ($current->sponsor === $root->username) {
+//            echo 'the while is there <br> <br>';
+            if (strtolower($current->sponsor) === strtolower($root->username)) {
 //                echo "<br> ************** FOUND INSIDE ' .$candidate->username . '******************* <br>";
 
                 return true;
             }
             $current = $allUsers[$current->sponsor] ?? null;
         }
+
+
+
+
+
         return false;
+
+
     }
 
     private function create_member_pvs(User $user, $left, $right)

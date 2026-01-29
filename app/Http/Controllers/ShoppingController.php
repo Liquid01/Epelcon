@@ -70,9 +70,9 @@ class ShoppingController extends Controller
 
         $product = Product::where('id', $request->productId)->first();
 //        dd($product);
-        $productId = $request->productId;
-        $productName = $request->name;
-        $productPrice = $product->sales_price;
+        $productId = $product->id;
+        $productName = $product->name;
+        $productPrice = $product->price;
         $quantity = $request->quantity;
         $image = $request->image;
 

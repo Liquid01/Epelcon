@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e272691a-8837-486d-a956-498fcda14245" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/upload/profile/thumb/avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/profile/thumb/avatar2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/includes/back_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/back_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/stockists/pins/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/stockists/pins/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShoppingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ShoppingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PVController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PVController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShoppingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShoppingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/transactions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/transactions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/includes/customjs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/includes/customjs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/menus/office_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/menus/office_menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shop/shop_items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/shop_items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/RegistersUsers.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,24 +148,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/wamp64/www/epelcon/public/upload/profile/thumb",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "yarn",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/wamp64/www/epelcon/public/upload/profile/thumb&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\epelcon\public\upload\profile\thumb" />
@@ -195,7 +202,10 @@
       <workItem from="1768911252607" duration="8619000" />
       <workItem from="1769057359950" duration="7214000" />
       <workItem from="1769193024738" duration="13374000" />
-      <workItem from="1769256276107" duration="24026000" />
+      <workItem from="1769256276107" duration="24624000" />
+      <workItem from="1769412587255" duration="3331000" />
+      <workItem from="1769427521958" duration="11921000" />
+      <workItem from="1769603637214" duration="9828000" />
     </task>
     <servers />
   </component>

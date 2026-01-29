@@ -73,7 +73,7 @@ class ShoppingController extends Controller
 //        dd($product);
         $productId = $request->productId;
         $productName = $request->name;
-        $productPrice = $product->sales_price;
+        $productPrice = $product->price;
         $quantity = $request->quantity;
         $image = $request->image;
 

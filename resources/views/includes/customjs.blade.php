@@ -191,18 +191,24 @@
             $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
 
             const qty = $("#" + $(this).attr('data-qty')).val();
+            const p_name = $(this).data('name');
 
             $.post("{!! route('addToCart') !!}", {
                 productId: $(this).data('added'),
                 quantity: qty,
                 price: $(this).data('price'),
-                name: $(this).data('name'),
+                name: p_name,
                 image: $(this).data('image')
             }, function (data) {
                 if (data) {
                     $("#cartmenu").html(data);
                     $("#shopping_cart").html($(".cartcount").html());
-                    swal({title: "Item Added!", timer: 2000, buttons: true, icon: 'success'});
+                    swal({
+                        title: qty + " " + p_name + " Added to Cart Successfuly",
+                        timer: 4000,
+                        buttons: true,
+                        icon: 'success'
+                    });
                     // window.location.replace("{!! route('checkout') !!}");
                 }
             }, 'html');
@@ -222,6 +228,8 @@
         });
 
         $("body").on('click', ".remove-btn", function () {
+            $.ajaxSetup({headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+
             const id = $(this).data('id');
             swal({
                 title: "Remove item?",
@@ -230,7 +238,7 @@
                 buttons: {cancel: 'No', delete: 'Yes'}
             }).then(function (will) {
                 if (will) {
-                    $.post("shop/cart/remove", {id: id}, function (data) {
+                    $.post("{!! route('member_remove_item') !!}", {id: id}, function (data) {
                         $("#cartmenu").html(data);
                         $("#shopping_cart").html($(".cartcount").html());
                         swal("Item removed", {icon: "success"});

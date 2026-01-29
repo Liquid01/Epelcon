@@ -134,7 +134,7 @@ Route::get('/checkSerial', [\App\Http\Controllers\PinController::class, 'check_s
 Route::get('/checkCode', [\App\Http\Controllers\PinController::class, 'check_code'])->name('check_code');
 
 //SHOP ROUTES
-Route::post('shop/cart', 'ShoppingController@addToCart')->name('addToCart');
+Route::post('shop/cart', [\App\Http\Controllers\ShoppingController::class, 'addToCart'])->name('addToCart');
 Route::get('/shop', 'ShoppingController@shop')->name('guestshop');
 
 //categories
@@ -250,13 +250,13 @@ Route::group(['prefix' => 'member', 'middleware' => 'members'], function () {
 //    shop
     Route::get('/shop', 'ShoppingController@members_shop')->name('shop');
     Route::get('/shop/check_balance', 'ShoppingController@check_balance')->name('check_balance');
-    Route::post('/shop/checkout/remove', 'ShoppingController@member_remove_item')->name('member_remove_item');
+    Route::post('/shop/checkout/remove', [\App\Http\Controllers\ShoppingController::class, 'member_remove_item'])->name('member_remove_item');
 
 //    orders
     Route::get('/orders', 'OrderController@member_orders')->name('member_orders');
     Route::post('/shop/checkout/order', 'ShoppingController@place_collection_order')->name('place_collection_order');
     Route::post('/shop/checkout/place_order', 'ShoppingController@place_delivery_order')->name('place_delivery_order');
-    // Route::get('/shop/checkout', 'ShoppingController@member_checkout')->name('member_checkout');
+     Route::get('/shop/checkout', [\App\Http\Controllers\ShoppingController::class, 'member_checkout'])->name('member_checkout');
 //    SUBSCRIPTIONS
     Route::get('get-auth-token', 'SubscriptionController@get_token')->name('get_token');
     Route::get('re-auth-token', 'SubscriptionController@reauth_token')->name('reauth_token');
@@ -355,7 +355,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::get('/members/search-range', [\App\Http\Controllers\Admin\MembersController::class, 'get_members_by_date_range'])->name('get_members_by_date_range');
 
 
-    Route::get('/all-transactions', 'Admin\TransactionController@index')->name('all_transactions');
+    Route::get('/all-transactions', [\App\Http\Controllers\Admin\TransactionController::class, 'index'])->name('all_transactions');
 
 //    WITHDRAWALS
     Route::get('/all-withdrawals', 'Admin\WithdrawalController@index')->name('all_withdrawals');

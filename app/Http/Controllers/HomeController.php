@@ -95,6 +95,7 @@ class HomeController extends Controller
 
             $bonus->save();
         }
+        $transactions = Transaction::where('owner', $user->username)->orderBy('created_at', 'desc')->paginate(10);
 
         $this_withdrawal = Withdrawal::where('by', $user->username)
             ->where('status', 0)->where('type', 'MATCHING_BONUS')
@@ -113,7 +114,7 @@ class HomeController extends Controller
 
 //        dd($matching_bonus);
 
-        return view('members.dashboard', compact('rewards', 'this_withdrawal', 'matchings', 'matching_bonus', 'user_withdrawals', 'data'));
+        return view('members.dashboard', compact('rewards', 'this_withdrawal', 'matchings', 'matching_bonus', 'user_withdrawals', 'data', 'transactions'));
     }
 
     public function adminDashboard()

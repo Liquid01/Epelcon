@@ -142,10 +142,10 @@
                                         @endphp
                                         @if ($settings->status == 1)
                                             <p style="font-size: 14px; margin-top:10px; text-align:center!important;"
-                                               class="">
+                                                class="">
                                                 <a href="javascript:void(0);" style="margin-top: -15px;"
-                                                   data-target="modal-withdraw-matching"
-                                                   class="modal-trigger  waves-effect waves-light">
+                                                    data-target="modal-withdraw-matching"
+                                                    class="modal-trigger  waves-effect waves-light">
                                                     Withdraw
                                                 </a>
                                             </p>
@@ -182,8 +182,8 @@
                                         </p>
                                         <p>
                                             <a href="javascript:void(0);"
-                                               style="text-align:center; font-size: 12px; text-align:center!important;"
-                                               class="">
+                                                style="text-align:center; font-size: 12px; text-align:center!important;"
+                                                class="">
                                                 @isset($matching)
                                                     Bal:
                                                     {{ number_format($matching_bonus->amount - $matching_bonus->withdrawn, 2) }}
@@ -219,18 +219,6 @@
 
                 <div class="col-md-4 col m4 x6 s12 l4">
                     <div class="card border-radius-6">
-                        <div class="container">
-                            <div class="col m3 s3">
-                                <p class="pl-1 pr-2" style="font-size:13px; text-align: left;">Latest<i
-                                            class=""></i>
-                                </p>
-                            </div>
-                            <div class="col m9 s9">
-                                {{--                                <p class="pl-1 " style="font-size:13px; text-align: right;">Matched: <i --}}
-                                {{--                                            class="matched"></i>PVs</p> --}}
-
-                            </div>
-                        </div>
                         <div class="clearfix"></div>
                         <div class="col-md-6 col m6 x6 s6 l6">
                             <div class="card-width">
@@ -238,7 +226,6 @@
                                     <div class="card-content center-align">
                                         <i class="material-icons amber-text small-ico-bg mb-5">shopping_cart</i>
                                         <p class="m-0">
-                                            {{ \Carbon\Carbon::now()->monthName }} <br>
 
                                             <b id="this_matching" class="this_wmatching">
                                                 {{--                                                @if (isset($matchings)) --}}
@@ -246,8 +233,11 @@
                                                 {{--                                                @else --}}
                                                 {{--                                                    {{0.00}} --}}
                                                 {{--                                                @endisset --}}
+                                            0.00
                                             </b>
                                         </p>
+                                            {{ \Carbon\Carbon::now()->monthName }} <br>
+
                                         <p class="green-text  mt-3">
                                             <i class="fa fa-coins"></i>
                                         </p>
@@ -343,6 +333,41 @@
                     {{--                        </div> --}}
                     {{--                    </div> --}}
                     {{--                </div> --}}
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="section row">
+                <div class="col s12 m4 l4 xl4 card-width">
+                    <div class="card border-radius-6 padding-3">
+                        <p class="">Latest Transactions</p>
+
+                        <div class="table table-responsive">
+                            <table class="table table-stripped">
+                                <thead>
+                                    <tr>
+                                        <td>
+                                            Date
+                                        </td>
+                                        <td>Type</td>
+                                        <td>Amount</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($transactions as $tr)
+                                        <tr style="font-size:10px;">
+                                            <td>{{ $tr->created_at }}</td>
+                                            <td>{{ $tr->type }}</td>
+                                            <td
+                                                class="@if ($tr->type == 'DEBIT' || $tr->type == 'DEBIT_TRANSFER') text-danger red-text @else green-text @endif">
+                                                {{ $tr->amount }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div id="card-with-analytics" class="section">

@@ -73,7 +73,7 @@
                                                     @isset($transactions)
                                                         <span class="hide">{{$n=1}}</span>
                                                         @forelse($transactions as $transaction)
-                                                            @if($transaction->owner != 'GodsWealth1')
+{{--                                                            @if($transaction->owner != 'GodsWealth1')--}}
                                                                 <tr role="row" class="even">
 
                                                                     <td>{{$n++}}</td>
@@ -83,7 +83,7 @@
                                                                     <td>{{$transaction->amount}}</td>
                                                                     <td>{{$transaction->created_at}}</td>
                                                                 </tr>
-                                                            @endif
+{{--                                                            @endif--}}
                                                         @empty
                                                             <h5>No Transactions</h5>
                                                         @endforelse
